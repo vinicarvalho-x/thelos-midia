@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:B;font-weight:700;src:url(node_modules/@fontsource/barlow/files/barlow-latin-700-normal.woff2)}
+@font-face{font-family:B;font-weight:800;src:url(node_modules/@fontsource/barlow/files/barlow-latin-800-normal.woff2)}
+@font-face{font-family:L;font-style:italic;font-weight:500;src:url(node_modules/@fontsource/literata/files/literata-latin-500-italic.woff2)}
+@font-face{font-family:J;font-weight:400;src:url(node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-400-normal.woff2)}
+@font-face{font-family:J;font-weight:700;src:url(node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-700-normal.woff2)}
+@font-face{font-family:M;font-weight:500;src:url(node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-500-normal.woff2)}
+:root{--ink:#16191e;--sec:#393E46;--lime:#D4FF6E;--light:#EEEEEE;--dark:#222831;--mid:#545454}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000}
+.s{width:1080px;height:1920px;position:relative;overflow:hidden;background:var(--ink);color:var(--light);font-family:J}
+.sc{position:absolute;inset:0;opacity:0}
+.sc>*{position:absolute}
+.noise{position:absolute;inset:0;opacity:.25;mix-blend-mode:overlay;pointer-events:none;z-index:50;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.7'/></svg>")}
+.mono{font-family:M;font-weight:500;font-size:24px;letter-spacing:.14em;text-transform:uppercase}
+h1,h2{font-family:B;font-weight:800;letter-spacing:-.025em;line-height:.95}
+.it{font-family:L;font-style:italic;font-weight:500;letter-spacing:-.03em}
+.hl{color:var(--lime)}
+.glow{text-shadow:0 0 50px rgba(212,255,110,.4)}
+.txt{font-size:40px;line-height:1.4;color:rgba(238,238,238,.82)}
+.row{display:grid;grid-template-columns:90px 1fr;padding:34px 0;border-top:2px solid rgba(238,238,238,.14)}
+.row b{font-family:B;font-size:66px;font-weight:800;position:relative}
+.row p{font-size:34px;margin-top:8px;color:rgba(238,238,238,.7)}
+.note{font-family:M;font-size:24px;letter-spacing:.08em;color:var(--lime)}
+.strike{position:absolute;left:-6px;top:52%;height:6px;background:var(--lime);width:0}
+.ul{position:absolute;left:0;bottom:-8px;height:8px;background:var(--lime);width:0}
+.hdr{top:260px;left:80px;right:80px;display:flex;justify-content:space-between;color:rgba(238,238,238,.5);z-index:40}
+.hdr b{color:var(--lime);font-weight:500}
+</style></head><body>
+<section class="s anim" id="s1" data-dur="21">
+  <div class="mono hdr" id="hdr" style="position:absolute"><span>Decodificado <b id="hdrb">Nº 001</b></span><span style="display:flex;gap:12px;align-items:center"><img id="hdrl" src="lambda-lime.svg" style="height:26px">Thelos Growth</span></div>
+
+  <!-- A: hook -->
+  <div class="sc" id="A">
+    <div id="Aimg" style="left:0;right:0;top:0;height:1350px;background:url(img/fachadas.jpg) center 15%/cover"></div>
+    <div style="inset:0;background:linear-gradient(180deg,rgba(22,25,30,.75) 0%,rgba(22,25,30,0) 22%,rgba(22,25,30,0) 50%,rgba(22,25,30,.95) 66%,#16191e 72%)"></div>
+    <h1 id="A1" style="left:80px;right:110px;top:1110px;font-size:104px">Seu concorrente não é melhor que você.</h1>
+    <div id="A2" class="it hl glow" style="left:80px;right:110px;top:1460px;font-size:80px;line-height:1">Ele só é mais desejado pelo Google.</div>
+  </div>
+
+  <!-- B: três critérios -->
+  <div class="sc" id="B">
+    <div id="B3" style="right:-60px;top:180px;font-family:B;font-weight:800;font-size:1150px;line-height:1;color:var(--sec);opacity:.7">3</div>
+    <h2 id="Bt" style="left:80px;right:110px;top:400px;font-size:104px">O Google usa <span class="it hl">três critérios</span> para decidir quem aparece primeiro.</h2>
+    <div style="left:80px;right:110px;top:900px">
+      <div class="row" id="Br1"><span class="note" style="padding-top:16px">01</span><div><b>Relevância<i class="ul" id="Bu1"></i></b><p>O quanto o seu perfil combina com a busca.</p></div></div>
+      <div class="row" id="Br2"><span class="note" style="padding-top:16px">02</span><div id="Br2c"><b>Distância<i class="strike" id="Bk"></i></b><p>Onde o cliente está. Esse ninguém controla.</p></div></div>
+      <div class="row" id="Br3" style="border-bottom:2px solid rgba(238,238,238,.14)"><span class="note" style="padding-top:16px">03</span><div><b>Proeminência<i class="ul" id="Bu3"></i></b><p>O quanto o negócio é conhecido e bem avaliado.</p></div></div>
+    </div>
+    <div id="Bf" class="mono" style="left:80px;top:1560px;color:rgba(238,238,238,.6)">Dois dos três <b style="color:var(--lime);font-weight:500">estão nas suas mãos</b></div>
+  </div>
+
+  <!-- C: 3 segundos -->
+  <div class="sc" id="C" style="background:var(--light);color:var(--dark)">
+    <h2 id="Ct" style="left:80px;right:110px;top:400px;font-size:220px;letter-spacing:-.04em">3<span class="it" style="font-size:160px"> segundos.</span></h2>
+    <p id="Cp" class="txt" style="left:80px;right:140px;top:720px;color:#3c4048">É o tempo que o cliente leva para comparar <b style="color:var(--dark)">os 3 primeiros do Google</b> e decidir com quem vai fechar.</p>
+    <div class="mono" id="Cclock" style="right:110px;top:1000px;font-size:56px;color:var(--dark);text-transform:none">0.0s</div>
+    <div style="left:80px;right:110px;top:1100px;height:360px">
+      <div style="position:absolute;left:0;right:0;top:140px;height:4px;background:var(--dark)"></div>
+      <div id="Cfill" style="position:absolute;left:0;width:0;top:131px;height:22px;background:var(--lime);border:2px solid var(--dark)"></div>
+      <div id="Ck1" style="position:absolute;left:6%;top:0"><div style="width:4px;height:130px;background:var(--dark)"></div><div style="position:absolute;top:-10px;left:16px;font-family:B;font-weight:700;font-size:46px">Fotos</div></div>
+      <div id="Ck2" style="position:absolute;left:34%;top:36px"><div style="width:4px;height:94px;background:var(--dark)"></div><div style="position:absolute;top:-10px;left:16px;font-family:B;font-weight:700;font-size:46px">Nota</div></div>
+      <div id="Ck3" style="position:absolute;left:58%;top:72px"><div style="width:4px;height:58px;background:var(--dark)"></div><div style="position:absolute;top:-10px;left:16px;font-family:B;font-weight:700;font-size:46px">Respostas</div></div>
+      <div id="Cc" style="position:absolute;left:78%;top:160px"><div style="width:4px;height:100px;background:var(--dark);margin-left:-2px"></div><div style="position:absolute;top:106px;left:0;transform:translateX(-50%);background:var(--dark);color:var(--lime);font-family:M;font-size:26px;letter-spacing:.1em;padding:14px 20px;white-space:nowrap">CONTATO ▸</div></div>
+    </div>
+  </div>
+
+  <!-- D: virada -->
+  <div class="sc" id="D">
+    <div style="left:50%;top:45%;width:1400px;height:1400px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(212,255,110,.15),transparent 60%)"></div>
+    <h2 id="D1" style="left:80px;right:110px;top:640px;font-size:150px;letter-spacing:-.035em">Fora do top 3,</h2>
+    <div id="D2" class="it hl glow" style="left:80px;right:110px;top:810px;font-size:132px;line-height:1">você não existe.</div>
+    <p id="D3" class="txt" style="left:80px;right:140px;top:1100px">O cliente decide entre os três primeiros. <b style="color:var(--light)">Quem está abaixo nem entra na disputa.</b></p>
+  </div>
+
+  <!-- E: CTA -->
+  <div class="sc" id="E" style="background:var(--lime);color:var(--dark)">
+    <img src="lambda-dark.svg" style="height:1500px;left:-300px;bottom:-300px;opacity:.08">
+    <h2 id="E1" style="left:80px;right:110px;top:420px;font-size:116px">Seu próximo cliente já está pesquisando. <span class="it">A pergunta é quem ele vai encontrar.</span></h2>
+    <p id="E2" class="txt" style="left:80px;right:160px;top:1030px;color:var(--dark);opacity:.8">A Thelos Growth constrói sinais que fazem o seu negócio ser a principal escolha do cliente.</p>
+    <div id="E3" style="left:80px;right:110px;top:1300px;background:var(--dark);color:var(--light);padding:46px 50px;display:flex;justify-content:space-between;align-items:center">
+      <div><div class="note">Próximo passo</div><div style="font-family:B;font-weight:800;font-size:62px;margin-top:10px">Clique no <span class="it hl">link da bio.</span></div></div>
+      <img src="lambda-lime.svg" style="height:86px">
+    </div>
+  </div>
+  <div class="noise"></div>
+</section>
+<script>
+const cl=x=>Math.max(0,Math.min(1,x)), ease=x=>1-Math.pow(1-cl(x),3), $=id=>document.getElementById(id);
+function fu(el,t,s,d=.5,dy=50){const p=ease((t-s)/d);el.style.opacity=p;el.style.transform=`translateY(${(1-p)*dy}px)`}
+const S={A:[0,3.4],B:[3.4,9.8],C:[9.8,15.2],D:[15.2,18.2],E:[18.2,21.5]};
+window.setT=function(_,t){
+ for(const k in S){const[a,b]=S[k];$(k).style.opacity=(t>=a&&t<b)?1:0}
+ const hdrLight=(t>=S.C[0]&&t<S.C[1])||t>=S.E[0]; $('hdr').style.color=hdrLight?'rgba(34,40,49,.55)':'rgba(238,238,238,.5)'; $('hdrb').style.color=hdrLight?'#222831':'#D4FF6E'; $('hdrl').src=hdrLight?'lambda-dark.svg':'lambda-lime.svg';
+ // A
+ let a=t; $('Aimg').style.transform=`scale(${1.12-0.08*cl(a/3.4)})`; fu($('A1'),a,.15,.45); fu($('A2'),a,1.1,.5);
+ // B
+ let b=t-S.B[0]; const p=ease(b/.8); $('B3').style.opacity=.7*p; $('B3').style.transform=`scale(${1.15-.15*p})`;
+ fu($('Bt'),b,.1,.5); fu($('Br1'),b,1.0,.4); fu($('Br2'),b,1.5,.4); fu($('Br3'),b,2.0,.4);
+ $('Bk').style.width=b<2.8?'0':(ease((b-2.8)/.4)*103)+'%'; $('Br2c').style.opacity=1-.55*ease((b-3.0)/.4);
+ $('Bu1').style.width=(ease((b-3.6)/.4)*100)+'%'; $('Bu3').style.width=(ease((b-3.9)/.4)*100)+'%'; fu($('Bf'),b,4.4,.4,15);
+ // C
+ let c=t-S.C[0]; fu($('Ct'),c,.05,.45); fu($('Cp'),c,.5,.5);
+ const f=cl((c-1.1)/2.6); $('Cfill').style.width=(f*78)+'%'; $('Cclock').textContent=(f*3).toFixed(1)+'s';
+ [['Ck1',.06],['Ck2',.34],['Ck3',.58]].forEach(([id,pos])=>fu($(id),c,1.1+pos/.78*2.6,.3,20));
+ const cc=ease((c-3.8)/.35); $('Cc').style.opacity=cc; $('Cc').style.transform=`scale(${.7+.3*cc})`; $('Cc').style.transformOrigin='0 0';
+ // D
+ let d=t-S.D[0]; fu($('D1'),d,.05,.4); fu($('D2'),d,.5,.45); fu($('D3'),d,1.1,.45);
+ // E
+ let e=t-S.E[0]; fu($('E1'),e,.05,.45); fu($('E2'),e,.7,.45); fu($('E3'),e,1.2,.45);
+}
+</script>
+</body></html>

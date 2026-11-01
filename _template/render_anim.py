@@ -4,10 +4,11 @@ from playwright.sync_api import sync_playwright
 
 html, out = pathlib.Path(sys.argv[1]).resolve(), pathlib.Path(sys.argv[2])
 fps = int(sys.argv[3]) if len(sys.argv) > 3 else 30
+H = int(sys.argv[4]) if len(sys.argv) > 4 else 1350
 out.mkdir(parents=True, exist_ok=True)
 with sync_playwright() as p:
     b = p.chromium.launch()
-    pg = b.new_page(viewport={"width": 1080, "height": 1350})
+    pg = b.new_page(viewport={"width": 1080, "height": H})
     pg.goto(html.as_uri())
     pg.wait_for_timeout(900)
     for i, el in enumerate(pg.query_selector_all("section.s"), 1):
