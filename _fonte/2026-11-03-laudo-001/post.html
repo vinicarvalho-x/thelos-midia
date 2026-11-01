@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Barlow;font-weight:600;src:url(node_modules/@fontsource/barlow/files/barlow-latin-600-normal.woff2)}
+@font-face{font-family:Barlow;font-weight:700;src:url(node_modules/@fontsource/barlow/files/barlow-latin-700-normal.woff2)}
+@font-face{font-family:Barlow;font-weight:800;src:url(node_modules/@fontsource/barlow/files/barlow-latin-800-normal.woff2)}
+@font-face{font-family:Literata;font-style:italic;font-weight:500;src:url(node_modules/@fontsource/literata/files/literata-latin-500-italic.woff2)}
+@font-face{font-family:Jakarta;font-weight:400;src:url(node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-400-normal.woff2)}
+@font-face{font-family:Jakarta;font-weight:500;src:url(node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-500-normal.woff2)}
+@font-face{font-family:Jakarta;font-weight:700;src:url(node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-700-normal.woff2)}
+@font-face{font-family:Mono;font-weight:400;src:url(node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2)}
+@font-face{font-family:Mono;font-weight:500;src:url(node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-500-normal.woff2)}
+:root{--dark:#222831;--sec:#393E46;--lime:#D4FF6E;--light:#EEEEEE;--mid:#545454}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;font-family:Jakarta}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;padding:96px 88px;display:flex;flex-direction:column}
+.dark{background:var(--dark);color:var(--light)}
+.light{background:var(--light);color:var(--dark)}
+.limebg{background:var(--lime);color:var(--dark)}
+/* background treatments */
+.grid::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(238,238,238,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(238,238,238,.045) 1px,transparent 1px);background-size:90px 90px;pointer-events:none}
+.glow::after{content:"";position:absolute;width:900px;height:900px;right:-320px;top:-300px;background:radial-gradient(circle,rgba(212,255,110,.13),transparent 62%);pointer-events:none}
+.paper::before{content:"";position:absolute;inset:0;opacity:.5;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.13 0 0 0 0 0.16 0 0 0 0 0.19 0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");pointer-events:none}
+.tech::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(212,255,110,.10) 1.5px,transparent 1.5px);background-size:36px 36px;pointer-events:none}
+.s>*{position:relative;z-index:1}
+.top{display:flex;justify-content:space-between;align-items:center;font-family:Mono;font-size:22px;letter-spacing:.08em;text-transform:uppercase}
+.dark .top{color:rgba(238,238,238,.6)} .light .top,.limebg .top{color:rgba(34,40,49,.6)}
+.stamp{border:2px solid currentColor;padding:8px 16px;border-radius:6px}
+.foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-family:Mono;font-size:22px;letter-spacing:.06em}
+.brand{display:flex;align-items:center;gap:16px;font-family:Barlow;font-weight:700;font-size:30px;letter-spacing:0;text-transform:none}
+.brand img{height:40px}
+.dark .foot{color:rgba(238,238,238,.55)} .light .foot{color:rgba(34,40,49,.55)} .limebg .foot{color:rgba(34,40,49,.7)}
+.dark .brand{color:var(--light)} .light .brand,.limebg .brand{color:var(--dark)}
+h1{font-family:Barlow;font-weight:800;font-size:112px;line-height:.98;letter-spacing:-.02em}
+h2{font-family:Barlow;font-weight:800;font-size:84px;line-height:1;letter-spacing:-.015em}
+.ser{font-family:Literata;font-style:italic;font-weight:500;letter-spacing:-.01em}
+.dark .hl{color:var(--lime)}
+.pill{background:var(--dark);color:var(--lime);padding:0 .22em;border-radius:.18em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.ul{background:linear-gradient(transparent 72%,var(--lime) 72%,var(--lime) 92%,transparent 92%)}
+.lead{font-size:38px;line-height:1.4;font-weight:400}
+.dark .lead{color:rgba(238,238,238,.82)}
+.kicker{font-family:Mono;font-size:24px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px}
+.dark .kicker{color:var(--lime)} .light .kicker{color:var(--mid)}
+/* slide 1 */
+.redact{display:inline-block;background:var(--light);height:.62em;vertical-align:middle;border-radius:3px}
+/* slide 2 */
+.factors{display:flex;flex-direction:column;gap:18px;margin-top:48px}
+.f{display:grid;grid-template-columns:84px 1fr auto;align-items:center;gap:28px;background:#fff;border:1.5px solid rgba(34,40,49,.12);border-radius:22px;padding:28px 36px}
+.f .n{font-family:Mono;font-size:30px;color:var(--mid)}
+.f h3{font-family:Barlow;font-weight:700;font-size:48px;line-height:1}
+.f p{font-size:28px;line-height:1.35;color:#3c4048;margin-top:10px}
+.tag{font-family:Mono;font-size:20px;letter-spacing:.06em;padding:10px 16px;border-radius:40px;white-space:nowrap}
+.tag.ok{background:var(--dark);color:var(--lime)} .tag.no{border:1.5px solid rgba(34,40,49,.3);color:var(--mid)}
+/* slide 3 */
+.ev{margin-top:40px;display:flex;flex-direction:column}
+.e{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:24px 0;border-top:1.5px solid rgba(238,238,238,.14)}
+.e:last-child{border-bottom:1.5px solid rgba(238,238,238,.14)}
+.e .id{font-family:Mono;font-size:22px;color:var(--lime);letter-spacing:.08em;padding-top:8px}
+.e h3{font-family:Barlow;font-weight:700;font-size:46px;line-height:1.05}
+.e p{font-size:28px;color:rgba(238,238,238,.7);margin-top:10px;line-height:1.35}
+/* slide 4 */
+.cycle{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.cycle::before{content:"";position:absolute;left:40px;right:40px;top:40px;height:2px;background:repeating-linear-gradient(90deg,var(--dark) 0 10px,transparent 10px 20px);opacity:.35}
+.st{position:relative;display:flex;flex-direction:column;gap:20px}
+.dot{width:80px;height:80px;border-radius:50%;background:var(--dark);color:var(--lime);display:flex;align-items:center;justify-content:center;font-family:Mono;font-size:26px}
+.st:last-child .dot{background:var(--lime);color:var(--dark);border:2px solid var(--dark)}
+.st b{font-family:Barlow;font-weight:700;font-size:36px}
+.st span{font-size:24px;color:#3c4048;line-height:1.35;padding-right:18px}
+.quote{margin-top:auto;margin-bottom:56px;border-left:6px solid var(--dark);padding-left:32px}
+/* slide 5 */
+.cta-box{margin-top:auto;background:var(--dark);color:var(--light);border-radius:28px;padding:48px 52px;display:flex;justify-content:space-between;align-items:center;gap:30px;margin-bottom:56px}
+.cta-box .kw{font-family:Barlow;font-weight:800;font-size:96px;color:var(--lime);letter-spacing:.02em;line-height:1}
+.cta-box p{font-size:32px;line-height:1.4;max-width:560px}
+</style></head><body>
+
+<!-- 1 -->
+<section class="s dark grid glow" id="s1">
+  <div class="top"><span>Laudo técnico nº 001</span><span class="stamp">Perfil do Google</span></div>
+  <div style="margin-top:150px">
+    <div class="kicker">Caso: ranking local</div>
+    <h1>Por que o concorrente aparece <span class="ser hl">antes</span> de você no Google Maps</h1>
+    <p class="lead" style="margin-top:56px;max-width:820px">Não é sorte e nem é o tamanho da empresa. São sinais que o Google lê todos os dias. A gente abriu o laudo. ↓</p>
+  </div>
+  <div class="foot"><span class="brand"><img src="lambda-lime.svg">Thelos Growth</span><span>01 / 05</span></div>
+</section>
+
+<!-- 2 -->
+<section class="s light paper" id="s2">
+  <div class="top"><span>Laudo nº 001 · Contexto</span><span>Fonte: diretrizes do Google</span></div>
+  <div style="margin-top:56px">
+    <h2>O Google cruza <span class="ser">três</span> sinais antes de mostrar um negócio</h2>
+  </div>
+  <div class="factors">
+    <div class="f"><span class="n">01</span><div><h3>Relevância</h3><p>O quanto o seu perfil combina com o que a pessoa pesquisou.</p></div><span class="tag ok">Você controla</span></div>
+    <div class="f"><span class="n">02</span><div><h3>Distância</h3><p>Onde o cliente está no momento da busca.</p></div><span class="tag no">Fora do controle</span></div>
+    <div class="f"><span class="n">03</span><div><h3>Proeminência</h3><p>O quanto o negócio é conhecido, avaliado e ativo.</p></div><span class="tag ok">Você controla</span></div>
+  </div>
+  <p class="lead" style="margin-top:40px">Dois dos três estão <span class="pill">nas suas mãos</span>.</p>
+  <div class="foot"><span class="brand"><img src="lambda-dark.svg">Thelos Growth</span><span>02 / 05</span></div>
+</section>
+
+<!-- 3 -->
+<section class="s dark tech" id="s3">
+  <div class="top"><span>Laudo nº 001 · Evidências</span><span class="stamp">4 achados</span></div>
+  <div style="margin-top:56px">
+    <h2>O que mais encontramos nos perfis que ficam <span class="ser hl">para trás</span></h2>
+  </div>
+  <div class="ev">
+    <div class="e"><span class="id">Evidência A</span><div><h3>Categoria principal genérica</h3><p>"Clínica" no lugar de "Clínica de estética". O Google precisa saber exatamente o que você faz.</p></div></div>
+    <div class="e"><span class="id">Evidência B</span><div><h3>Avaliações sem resposta</h3><p>Responder mostra que o perfil tem alguém cuidando dele.</p></div></div>
+    <div class="e"><span class="id">Evidência C</span><div><h3>Fotos paradas há meses</h3><p>Perfil sem atualização parece negócio parado.</p></div></div>
+    <div class="e"><span class="id">Evidência D</span><div><h3>Serviços fora da descrição</h3><p>Se o cliente pesquisa o serviço e ele não está no perfil, você não aparece.</p></div></div>
+  </div>
+  <div class="foot"><span class="brand"><img src="lambda-lime.svg">Thelos Growth</span><span>03 / 05</span></div>
+</section>
+
+<!-- 4 -->
+<section class="s light paper" id="s4">
+  <div class="top"><span>Laudo nº 001 · Conclusão</span><span>Parecer final</span></div>
+  <div style="margin-top:56px">
+    <h2>Quem aparece primeiro não é o melhor. É quem manda os <span class="ul">sinais certos</span>.</h2>
+  </div>
+  <div class="kicker" style="margin-top:72px;margin-bottom:0">O Ciclo da Confiança Local</div>
+  <div class="cycle" style="margin-top:36px">
+    <div class="st"><div class="dot">01</div><b>Aparecer</b><span>Estar no topo quando a busca acontece.</span></div>
+    <div class="st"><div class="dot">02</div><b>Convencer</b><span>Fotos, serviços e descrição que mostram valor.</span></div>
+    <div class="st"><div class="dot">03</div><b>Confirmar</b><span>Avaliações que dão segurança na escolha.</span></div>
+    <div class="st"><div class="dot">04</div><b>Converter</b><span>Ligação, rota ou mensagem no WhatsApp.</span></div>
+  </div>
+  <div class="quote" style="margin-top:96px"><p class="lead">Cada etapa é um sinal. Perfil completo e ativo, o Google <span class="pill">mostra mais</span>.</p></div>
+  <div class="foot"><span class="brand"><img src="lambda-dark.svg">Thelos Growth</span><span>04 / 05</span></div>
+</section>
+
+<!-- 5 -->
+<section class="s limebg" id="s5">
+  <div class="top"><span>Laudo nº 001 · Próximo passo</span><span class="stamp">Thelos Growth</span></div>
+  <div style="margin-top:120px">
+    <h1 style="font-size:104px">Seu próximo cliente já está pesquisando no Google.</h1>
+    <p class="lead" style="margin-top:48px;max-width:840px">A pergunta é qual perfil ele vai encontrar primeiro.</p>
+  </div>
+  <div class="cta-box">
+    <span class="kw">LAUDO</span>
+    <p>Comente a palavra e a Thelos Growth envia uma análise do seu perfil no Google.</p>
+  </div>
+  <div class="foot"><span class="brand"><img src="lambda-dark.svg">Thelos Growth</span><span>05 / 05</span></div>
+</section>
+</body></html>
