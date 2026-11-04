@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:B;font-weight:700;src:url(node_modules/@fontsource/barlow/files/barlow-latin-700-normal.woff2)}
+@font-face{font-family:B;font-weight:800;src:url(node_modules/@fontsource/barlow/files/barlow-latin-800-normal.woff2)}
+@font-face{font-family:L;font-style:italic;font-weight:500;src:url(node_modules/@fontsource/literata/files/literata-latin-500-italic.woff2)}
+@font-face{font-family:J;font-weight:400;src:url(node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-400-normal.woff2)}
+@font-face{font-family:J;font-weight:700;src:url(node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-700-normal.woff2)}
+@font-face{font-family:M;font-weight:500;src:url(node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-500-normal.woff2)}
+:root{--ink:#16191e;--sec:#393E46;--lime:#D4FF6E;--light:#EEEEEE;--dark:#222831;--mid:#545454}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000}
+.s{width:1080px;height:1920px;position:relative;overflow:hidden;background:var(--ink);color:var(--light);font-family:J}
+.sc{position:absolute;inset:0;opacity:0}
+.sc>*{position:absolute}
+.noise{position:absolute;inset:0;opacity:.25;mix-blend-mode:overlay;pointer-events:none;z-index:50;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.7'/></svg>")}
+.mono{font-family:M;font-weight:500;font-size:24px;letter-spacing:.14em;text-transform:uppercase}
+h1,h2{font-family:B;font-weight:800;letter-spacing:-.025em;line-height:.95}
+.it{font-family:L;font-style:italic;font-weight:500;letter-spacing:-.03em}
+.hl{color:var(--lime)}
+.glow{text-shadow:0 0 50px rgba(212,255,110,.4)}
+.txt{font-size:40px;line-height:1.4;color:rgba(238,238,238,.82)}
+.row{display:grid;grid-template-columns:90px 1fr;padding:34px 0;border-top:2px solid rgba(238,238,238,.14)}
+.row b{font-family:B;font-size:66px;font-weight:800;position:relative}
+.row p{font-size:34px;margin-top:8px;color:rgba(238,238,238,.7)}
+.note{font-family:M;font-size:24px;letter-spacing:.08em;color:var(--lime)}
+.strike{position:absolute;left:-6px;top:52%;height:6px;background:var(--lime);width:0}
+.ul{position:absolute;left:0;bottom:-8px;height:8px;background:var(--lime);width:0}
+.hdr{top:260px;left:80px;right:80px;display:flex;justify-content:space-between;color:rgba(238,238,238,.5);z-index:40}
+.hdr b{color:var(--lime);font-weight:500}
+.res{position:absolute;left:0;right:0;height:150px;background:rgba(238,238,238,.05);border:2px solid rgba(238,238,238,.14);padding:28px 34px;display:flex;justify-content:space-between;align-items:center}
+.res b{font-family:B;font-weight:700;font-size:50px}
+.res .m{font-family:M;font-size:22px;letter-spacing:.1em;color:rgba(238,238,238,.5);text-transform:uppercase}
+.stp{position:absolute;left:0;right:0;padding-left:100px}
+.stp .k{font-family:M;font-size:24px;letter-spacing:.1em;color:var(--lime)}
+.stp b{display:block;font-family:B;font-weight:800;font-size:76px;line-height:1;margin-top:6px}
+.stp p{font-size:34px;line-height:1.3;color:rgba(238,238,238,.72);margin-top:10px}
+.dot{position:absolute;left:14px;width:30px;height:30px;border-radius:50%;border:3px solid rgba(238,238,238,.3);background:var(--ink)}
+.fl{border-top:2px solid rgba(34,40,49,.16);padding:34px 0}
+.fl b{font-family:B;font-weight:800;font-size:58px;display:block;line-height:1.05}
+.fl p{font-size:36px;color:#3c4048;margin-top:10px}
+</style></head><body>
+<section class="s anim" id="s1" data-dur="24">
+  <div class="mono hdr" id="hdr" style="position:absolute"><span>Framework <b id="hdrb">Thelos</b></span><span style="display:flex;gap:12px;align-items:center"><img id="hdrl" src="lambda-lime.svg" style="height:26px">Thelos Growth</span></div>
+
+  <!-- A: gancho -->
+  <div class="sc" id="A">
+    <div style="left:50%;top:32%;width:1400px;height:1400px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(212,255,110,.08),transparent 60%)"></div>
+    <div id="Ares" style="left:80px;right:110px;top:400px;height:560px">
+      <div class="res" id="Ar1" style="top:0"><b>Concorrente A</b><span class="m">4,8 · 312</span></div>
+      <div class="res" id="Ar2" style="top:190px;border-color:var(--lime)"><b>Seu negócio</b><span class="m" style="color:var(--lime)">Você</span></div>
+      <div class="res" id="Ar3" style="top:380px"><b>Concorrente B</b><span class="m">4,6 · 158</span></div>
+      <div id="Acur" style="position:absolute;width:58px;height:58px;border-radius:50%;border:4px solid var(--lime);background:rgba(212,255,110,.25);left:600px;top:560px"></div>
+    </div>
+    <h1 id="A1" style="left:80px;right:110px;top:1060px;font-size:104px">Seu negócio aparece no Google.</h1>
+    <div id="A2" class="it hl glow" style="left:80px;right:110px;top:1290px;font-size:82px;line-height:1.02">Então por que o cliente escolhe o outro?</div>
+  </div>
+
+  <!-- B: o ciclo -->
+  <div class="sc" id="B">
+    <h2 id="Bt" style="left:80px;right:110px;top:380px;font-size:96px">O Ciclo da <span class="it hl">Confiança Local.</span></h2>
+    <div style="left:80px;right:110px;top:640px;height:840px">
+      <div style="position:absolute;left:27px;top:20px;width:4px;height:620px;background:rgba(238,238,238,.12)"></div>
+      <div id="Bline" style="position:absolute;left:27px;top:20px;width:4px;height:0;background:var(--lime)"></div>
+      <div class="dot" id="Bd1" style="top:6px"></div><div class="dot" id="Bd2" style="top:216px"></div><div class="dot" id="Bd3" style="top:426px"></div><div class="dot" id="Bd4" style="top:636px"></div>
+      <div class="stp" id="Bs1" style="top:0"><span class="k">01</span><b>Aparecer</b><p>Estar entre os primeiros quando ele pesquisa.</p></div>
+      <div class="stp" id="Bs2" style="top:210px"><span class="k">02</span><b>Convencer</b><p>Fotos, serviços e avaliações que dão vontade.</p></div>
+      <div class="stp" id="Bs3" style="top:420px"><span class="k">03</span><b>Confirmar</b><p>Ele confere horário, endereço e respostas.</p></div>
+      <div class="stp" id="Bs4" style="top:630px"><span class="k">04</span><b>Converter</b><p>Ele liga, chama no WhatsApp ou agenda.</p></div>
+    </div>
+    <p id="Bn" class="txt" style="left:80px;right:110px;top:1490px;font-size:36px"><span class="hl" style="font-family:M;font-size:30px">↺</span> Cada cliente bem atendido vira avaliação. <b style="color:var(--light)">E o ciclo recomeça.</b></p>
+  </div>
+
+  <!-- C: onde quebra -->
+  <div class="sc" id="C" style="background:var(--light);color:var(--dark)">
+    <h2 id="Ct" style="left:80px;right:110px;top:380px;font-size:104px">Se uma etapa falha, <span class="it">o cliente escolhe outro.</span></h2>
+    <div style="left:80px;right:110px;top:820px">
+      <div class="fl" id="Cf1"><b>Aparece, mas não convence.</b><p>Ele passa direto para o próximo.</p></div>
+      <div class="fl" id="Cf2"><b>Convence, mas não confirma.</b><p>Ele desconfia e volta para a busca.</p></div>
+      <div class="fl" id="Cf3" style="border-bottom:2px solid rgba(34,40,49,.16)"><b>Confirma, mas complica o contato.</b><p>Ele desiste no último passo.</p></div>
+    </div>
+  </div>
+
+  <!-- D: virada -->
+  <div class="sc" id="D">
+    <div style="left:50%;top:45%;width:1400px;height:1400px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(212,255,110,.15),transparent 60%)"></div>
+    <h2 id="D1" style="left:80px;right:110px;top:640px;font-size:146px;letter-spacing:-.035em">Aparecer é o começo.</h2>
+    <div id="D2" class="it hl glow" style="left:80px;right:110px;top:960px;font-size:128px;line-height:1">Confiança é o que fecha.</div>
+  </div>
+
+  <!-- E: CTA -->
+  <div class="sc" id="E" style="background:var(--lime);color:var(--dark)">
+    <img src="lambda-dark.svg" style="height:1500px;left:-300px;bottom:-300px;opacity:.08">
+    <h2 id="E1" style="left:80px;right:110px;top:420px;font-size:116px">Seu próximo cliente já está pesquisando. <span class="it">A pergunta é quem ele vai encontrar.</span></h2>
+    <p id="E2" class="txt" style="left:80px;right:160px;top:1030px;color:var(--dark);opacity:.8">A Thelos Growth constrói sinais que fazem o seu negócio ser a principal escolha do cliente.</p>
+    <div id="E3" style="left:80px;right:110px;top:1300px;background:var(--dark);color:var(--light);padding:46px 50px;display:flex;justify-content:space-between;align-items:center">
+      <div><div class="note">Próximo passo</div><div style="font-family:B;font-weight:800;font-size:62px;margin-top:10px">Clique no <span class="it hl">link da bio.</span></div></div>
+      <img src="lambda-lime.svg" style="height:86px">
+    </div>
+  </div>
+  <div class="noise"></div>
+</section>
+<script>
+const cl=x=>Math.max(0,Math.min(1,x)), ease=x=>1-Math.pow(1-cl(x),3), $=id=>document.getElementById(id);
+function fu(el,t,s,d=.5,dy=50){const p=ease((t-s)/d);el.style.opacity=p;el.style.transform=`translateY(${(1-p)*dy}px)`}
+const S={A:[0,3.6],B:[3.6,13.4],C:[13.4,18],D:[18,20.6],E:[20.6,24.1]};
+window.setT=function(_,t){
+ for(const k in S){const[a,b]=S[k];$(k).style.opacity=(t>=a&&t<b)?1:0}
+ const hdrLight=(t>=S.C[0]&&t<S.C[1])||t>=S.E[0]; $('hdr').style.color=hdrLight?'rgba(34,40,49,.55)':'rgba(238,238,238,.5)'; $('hdrb').style.color=hdrLight?'#222831':'#D4FF6E'; $('hdrl').src=hdrLight?'lambda-dark.svg':'lambda-lime.svg';
+ // A
+ let a=t; fu($('Ar1'),a,0,.3,30); fu($('Ar2'),a,.1,.3,30); fu($('Ar3'),a,.2,.3,30);
+ fu($('A1'),a,.15,.4); fu($('A2'),a,.9,.45);
+ const m=ease((a-1.6)/.8); $('Acur').style.left=(600-60*m)+'px'; $('Acur').style.top=(560-500*m)+'px'; $('Acur').style.opacity=cl((a-1.4)/.3);
+ const pick=ease((a-2.5)/.3); $('Ar1').style.borderColor=`rgba(238,238,238,${.14+.7*pick})`; $('Ar1').style.background=`rgba(238,238,238,${.05+.1*pick})`;
+ $('Ar2').style.opacity=Math.min(parseFloat($('Ar2').style.opacity),1-.55*pick); $('Acur').style.transform=`scale(${1-.25*Math.sin(Math.PI*cl((a-2.5)/.3))})`;
+ // B
+ let b=t-S.B[0]; fu($('Bt'),b,.05,.5);
+ const st=[.9,2.4,3.9,5.4];
+ st.forEach((s,i)=>{fu($('Bs'+(i+1)),b,s,.45,30); const on=b>=s+.1; $('Bd'+(i+1)).style.borderColor=on?'#D4FF6E':'rgba(238,238,238,.3)'; $('Bd'+(i+1)).style.background=on?'#D4FF6E':'#16191e'; $('Bd'+(i+1)).style.opacity=cl((b-s+.3)/.3)});
+ $('Bline').style.height=(620*cl((b-1.0)/4.5))+'px';
+ fu($('Bn'),b,6.9,.5,20);
+ // C
+ let c=t-S.C[0]; fu($('Ct'),c,.05,.45); fu($('Cf1'),c,.9,.4); fu($('Cf2'),c,1.8,.4); fu($('Cf3'),c,2.7,.4);
+ // D
+ let d=t-S.D[0]; fu($('D1'),d,.05,.4); fu($('D2'),d,.7,.45);
+ // E
+ let e=t-S.E[0]; fu($('E1'),e,.05,.45); fu($('E2'),e,.7,.45); fu($('E3'),e,1.2,.45);
+}
+</script>
+</body></html>

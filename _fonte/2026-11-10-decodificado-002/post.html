@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:B;font-weight:700;src:url(node_modules/@fontsource/barlow/files/barlow-latin-700-normal.woff2)}
+@font-face{font-family:B;font-weight:800;src:url(node_modules/@fontsource/barlow/files/barlow-latin-800-normal.woff2)}
+@font-face{font-family:L;font-style:italic;font-weight:500;src:url(node_modules/@fontsource/literata/files/literata-latin-500-italic.woff2)}
+@font-face{font-family:J;font-weight:400;src:url(node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-400-normal.woff2)}
+@font-face{font-family:J;font-weight:700;src:url(node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-700-normal.woff2)}
+@font-face{font-family:M;font-weight:500;src:url(node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-500-normal.woff2)}
+:root{--ink:#16191e;--dark:#222831;--sec:#393E46;--lime:#D4FF6E;--light:#EEEEEE;--mid:#545454}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--ink);color:var(--light);font-family:J}
+.s>*{position:absolute}
+.noise::after{content:"";position:absolute;inset:0;opacity:.25;mix-blend-mode:overlay;pointer-events:none;z-index:30;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.7'/></svg>")}
+.mono{font-family:M;font-weight:500;font-size:20px;letter-spacing:.14em;text-transform:uppercase}
+.head{z-index:5;top:64px;left:72px;right:72px;display:flex;justify-content:space-between;color:rgba(238,238,238,.5)}
+.head b{color:var(--lime);font-weight:500}
+.foot{z-index:5;bottom:56px;left:72px;right:72px;display:flex;justify-content:space-between;align-items:center;color:rgba(238,238,238,.45)}
+.bar{display:flex;gap:6px}.bar i{width:34px;height:4px;background:rgba(238,238,238,.2)}.bar i.on{background:var(--lime)}
+h1,h2{font-family:B;font-weight:800;letter-spacing:-.025em;line-height:.95}
+.it{font-family:L;font-style:italic;font-weight:500;letter-spacing:-.03em}
+.hl{color:var(--lime)}
+.glow{text-shadow:0 0 40px rgba(212,255,110,.35)}
+.txt{font-size:34px;line-height:1.45;color:rgba(238,238,238,.8)}
+.txt b{color:var(--light);font-weight:700}
+.note{font-family:M;font-size:19px;letter-spacing:.08em;color:var(--lime);text-transform:uppercase}
+.row{display:grid;grid-template-columns:110px 1fr;padding:30px 0;border-top:1.5px solid rgba(238,238,238,.14);position:relative}
+.row b{font-family:B;font-size:54px;font-weight:800;position:relative}
+.row p{font-size:28px;margin-top:6px;color:rgba(238,238,238,.7)}
+.strike{position:absolute;left:-6px;top:52%;height:5px;background:var(--lime);width:0}
+.sweep{position:absolute;left:0;bottom:-6px;height:7px;background:var(--lime);width:0}
+.card{position:absolute;width:290px;height:150px;background:rgba(238,238,238,.05);border:1.5px solid rgba(238,238,238,.14);padding:24px 26px}
+.card .d{font-family:M;font-weight:500;font-size:19px;letter-spacing:.12em;color:rgba(238,238,238,.6);text-transform:uppercase}
+.card .st{display:flex;gap:6px;margin-top:16px}
+.card .ln{height:10px;background:rgba(238,238,238,.16);margin-top:16px;border-radius:5px}
+.src{font-family:M;font-weight:500;font-size:16px;letter-spacing:.08em;color:rgba(238,238,238,.4);text-transform:uppercase}
+.bx{display:grid;grid-template-columns:230px 1fr;align-items:center;padding:30px 0;border-top:1.5px solid rgba(34,40,49,.16)}
+.bx .n{font-family:B;font-weight:800;font-size:110px;letter-spacing:-.04em;line-height:.9}
+.bx p{font-size:29px;line-height:1.35;color:#3c4048}
+.bx .tr{height:12px;background:rgba(34,40,49,.1);margin-top:16px;position:relative}
+.bx .fl{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--dark)}
+</style></head><body>
+
+<!-- 1 CAPA -->
+<section class="s noise" id="s1">
+  <div style="left:0;right:0;top:-150px;height:1350px;background:url(img/ampulheta.jpg) center top/1080px auto no-repeat"></div>
+  <div style="inset:0;background:linear-gradient(180deg,rgba(22,25,30,.6) 0%,rgba(22,25,30,0) 14%,rgba(22,25,30,0) 54%,rgba(22,25,30,.92) 68%,#16191e 76%)"></div>
+  <div class="mono head"><span>Decodificado <b>Nº 002</b></span><span>Reputação</span></div>
+  <h1 style="z-index:5;left:72px;right:72px;top:900px;font-size:88px">Sua nota 4,9 tem prazo de validade.</h1>
+  <div class="it hl glow" style="z-index:5;left:72px;right:72px;top:1100px;font-size:60px;line-height:1">O cliente olha a data antes das estrelas.</div>
+  <div class="mono foot"><span style="display:flex;align-items:center;gap:14px"><img src="lambda-lime.svg" style="height:30px">Thelos Growth</span><span style="color:var(--lime)">A data que decide →</span></div>
+</section>
+
+<!-- 2 ANIM: 74% / JANELA DE 3 MESES -->
+<section class="s noise anim" id="s2" data-dur="8">
+  <div class="mono head"><span>Decodificado <b>Nº 002</b></span><span>01 · A janela</span></div>
+  <div id="n74" style="left:60px;top:150px;font-family:B;font-weight:800;font-size:300px;letter-spacing:-.05em;line-height:1;color:var(--lime)" class="glow">0%</div>
+  <p id="t74" class="txt" style="left:72px;right:110px;top:480px;font-size:38px">dos consumidores procuram avaliações escritas nos <b class="hl" style="color:var(--lime)">últimos 3 meses.</b></p>
+  <div id="cards" style="left:72px;right:72px;top:680px;height:420px">
+    <div id="lab1" class="note" style="position:absolute;left:0;top:0">Dentro da janela</div>
+    <div class="card" id="c1" style="left:0;top:40px"><div class="d">Há 2 dias</div><div class="st"></div><div class="ln" style="width:85%"></div><div class="ln" style="width:55%"></div></div>
+    <div class="card" id="c2" style="left:323px;top:40px"><div class="d">Há 3 semanas</div><div class="st"></div><div class="ln" style="width:75%"></div><div class="ln" style="width:60%"></div></div>
+    <div class="card" id="c3" style="left:646px;top:40px"><div class="d">Há 2 meses</div><div class="st"></div><div class="ln" style="width:90%"></div><div class="ln" style="width:45%"></div></div>
+    <div id="win" style="position:absolute;left:-12px;top:28px;width:960px;height:174px;border:3px solid var(--lime);opacity:0"></div>
+    <div id="lab2" class="note" style="position:absolute;left:0;top:212px;color:rgba(238,238,238,.45)">Fora da janela</div>
+    <div class="card" id="c4" style="left:0;top:250px"><div class="d">Há 5 meses</div><div class="st"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:50%"></div></div>
+    <div class="card" id="c5" style="left:323px;top:250px"><div class="d">Há 8 meses</div><div class="st"></div><div class="ln" style="width:70%"></div><div class="ln" style="width:65%"></div></div>
+    <div class="card" id="c6" style="left:646px;top:250px"><div class="d">Há 1 ano</div><div class="st"></div><div class="ln" style="width:88%"></div><div class="ln" style="width:40%"></div></div>
+  </div>
+  <p id="f32" class="txt" style="left:72px;right:110px;top:1110px;font-size:30px"><b>32% já querem avaliações das últimas 2 semanas.</b> Um ano antes, eram 20%.</p>
+  <div class="src" id="src2" style="left:72px;top:1212px">Fonte: BrightLocal, Local Consumer Review Survey 2026 · 1.002 consumidores (EUA)</div>
+  <div class="mono foot"><span style="display:flex;align-items:center;gap:14px"><img src="lambda-lime.svg" style="height:30px">Thelos Growth</span><span class="bar"><i></i><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+</section>
+
+<!-- 3 ANIM: RESPOSTAS -->
+<section class="s noise anim" id="s3" data-dur="8" style="background:var(--light);color:var(--dark)">
+  <div class="mono head" style="color:rgba(34,40,49,.5)"><span>Decodificado <b style="color:var(--dark)">Nº 002</b></span><span>02 · A resposta</span></div>
+  <h2 id="t3" style="left:72px;right:72px;top:170px;font-size:92px">O cliente também lê<br><span class="it">o que você responde.</span></h2>
+  <div style="left:72px;right:72px;top:500px">
+    <div class="bx" id="b1"><div class="n" id="n1">0%</div><div><p>preferem negócios que respondem <b style="color:var(--dark)">a todas</b> as avaliações.</p><div class="tr"><i class="fl" id="f1"></i></div></div></div>
+    <div class="bx" id="b2"><div class="n" id="n2">0%</div><div><p>evitam negócios que <b style="color:var(--dark)">nunca respondem.</b></p><div class="tr"><i class="fl" id="f2"></i></div></div></div>
+    <div class="bx" id="b3" style="border-bottom:1.5px solid rgba(34,40,49,.16)"><div class="n" id="n3">0%</div><div><p>desanimam com resposta <b style="color:var(--dark)">genérica, de modelo.</b></p><div class="tr"><i class="fl" id="f3"></i></div></div></div>
+  </div>
+  <p id="end3" class="txt" style="left:72px;right:72px;top:1080px;color:#3c4048;font-size:34px">Responder não é só educação. <b style="color:var(--dark);background:linear-gradient(transparent 58%,var(--lime) 58%,var(--lime) 92%,transparent 92%)">É argumento de venda.</b></p>
+  <div class="src" style="left:72px;top:1205px;color:rgba(34,40,49,.45)">Fonte: BrightLocal, Local Consumer Review Survey 2026 · 1.002 consumidores (EUA)</div>
+  <div class="mono foot" style="color:rgba(34,40,49,.5)"><span style="display:flex;align-items:center;gap:14px"><img src="lambda-dark.svg" style="height:30px">Thelos Growth</span><span class="bar"><i style="background:rgba(34,40,49,.2)"></i><i style="background:rgba(34,40,49,.2)"></i><i class="on" style="background:var(--dark)"></i><i style="background:rgba(34,40,49,.2)"></i><i style="background:rgba(34,40,49,.2)"></i><i style="background:rgba(34,40,49,.2)"></i></span></div>
+</section>
+
+<!-- 4 VIRADA -->
+<section class="s noise" id="s4">
+  <div style="left:50%;top:38%;width:1200px;height:1200px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(212,255,110,.14),transparent 60%)"></div>
+  <div class="mono head"><span>Decodificado <b>Nº 002</b></span><span>03 · A virada</span></div>
+  <h2 style="left:72px;right:72px;top:230px;font-size:132px;letter-spacing:-.035em">Reputação não é estoque.</h2>
+  <div class="it hl glow" style="left:72px;right:72px;top:520px;font-size:130px;line-height:1">É fluxo.</div>
+  <p class="txt" style="left:72px;right:150px;top:740px">Um perfil cheio de avaliações antigas passa a impressão de negócio parado. <b>Avaliação recente é a prova de que vocês entregam bem hoje.</b></p>
+  <div class="mono foot"><span style="display:flex;align-items:center;gap:14px"><img src="lambda-lime.svg" style="height:30px">Thelos Growth</span><span class="bar"><i></i><i></i><i></i><i class="on"></i><i></i><i></i></span></div>
+</section>
+
+<!-- 5 HABITOS -->
+<section class="s noise" id="s5">
+  <div class="mono head"><span>Decodificado <b>Nº 002</b></span><span>04 · O ritmo</span></div>
+  <h2 style="left:72px;right:72px;top:200px;font-size:92px">Três hábitos que mantêm o perfil <span class="it hl">vivo.</span></h2>
+  <div style="left:72px;right:72px;top:520px">
+    <div class="row"><span class="note" style="padding-top:12px">01</span><div><b>Pedir sempre</b><p>No fim de cada atendimento, com o link direto para avaliar.</p></div></div>
+    <div class="row"><span class="note" style="padding-top:12px">02</span><div><b>Responder todas</b><p>Com o nome do cliente e do serviço. Nada de texto copiado.</p></div></div>
+    <div class="row" style="border-bottom:1.5px solid rgba(238,238,238,.14)"><span class="note" style="padding-top:12px">03</span><div><b>Manter o ritmo</b><p>Algumas avaliações toda semana valem mais que muitas de uma vez só.</p></div></div>
+  </div>
+  <div class="mono foot"><span style="display:flex;align-items:center;gap:14px"><img src="lambda-lime.svg" style="height:30px">Thelos Growth</span><span class="bar"><i></i><i></i><i></i><i></i><i class="on"></i><i></i></span></div>
+</section>
+
+<!-- 6 CTA -->
+<section class="s" id="s6" style="background:var(--lime);color:var(--dark)">
+  <img src="lambda-dark.svg" style="height:1250px;left:-260px;bottom:-330px;opacity:.08">
+  <div class="mono head" style="color:rgba(34,40,49,.6)"><span>Decodificado <b style="color:var(--dark)">Nº 002</b></span><span>Arquivo fechado</span></div>
+  <h2 style="left:72px;right:72px;top:230px;font-size:104px">Seu próximo cliente vai ler suas avaliações. <span class="it">Que ele encontre motivos para escolher você.</span></h2>
+  <p class="txt" style="left:72px;right:200px;top:790px;color:var(--dark);opacity:.8">A Thelos Growth constrói sinais que fazem o seu negócio ser a principal escolha do cliente.</p>
+  <div style="left:72px;right:72px;bottom:150px;background:var(--dark);color:var(--light);padding:44px 48px;display:flex;justify-content:space-between;align-items:center">
+    <div><div class="note">Próximo passo</div><div style="font-family:B;font-weight:800;font-size:58px;margin-top:10px">É só clicar no <span class="it hl">link da bio.</span></div></div>
+    <img src="lambda-lime.svg" style="height:80px">
+  </div>
+</section>
+
+<script>
+const cl=(x)=>Math.max(0,Math.min(1,x));
+const ease=(x)=>1-Math.pow(1-cl(x),3);
+const $=id=>document.getElementById(id);
+function fadeUp(el,t,start,d=.6,dy=40){const p=ease((t-start)/d);el.style.opacity=p;el.style.transform=`translateY(${(1-p)*dy}px)`}
+const star='<svg width="26" height="26" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z" fill="#D4FF6E"/></svg>';
+document.querySelectorAll('.card .st').forEach(e=>e.innerHTML=star.repeat(5));
+window.setT=function(slide,t){
+ if(slide==2){
+  const c=ease(t/1.6); $('n74').textContent=Math.round(74*c)+'%'; fadeUp($('n74'),t,0,.4,20);
+  fadeUp($('t74'),t,.5,.6);
+  ['c1','c2','c3','c4','c5','c6'].forEach((id,i)=>fadeUp($(id),t,1.4+i*.22,.4,24));
+  $('lab1').style.opacity=ease((t-3.3)/.4); $('win').style.opacity=ease((t-3.3)/.4);
+  const dim=ease((t-3.9)/.6); ['c4','c5','c6'].forEach(id=>{$(id).style.opacity=Math.min(parseFloat($(id).style.opacity),1-.72*dim);$(id).style.filter=`grayscale(${dim})`});
+  $('lab2').style.opacity=dim;
+  fadeUp($('f32'),t,5.0,.6); $('src2').style.opacity=ease((t-5.6)/.5);
+ }
+ if(slide==3){
+  fadeUp($('t3'),t,.2,.7);
+  [['b1','n1','f1',80,1.0],['b2','n2','f2',42,1.9],['b3','n3','f3',50,2.8]].forEach(([b,n,f,v,s])=>{fadeUp($(b),t,s,.4,24);const p=ease((t-s-.2)/1.0);$(n).textContent=Math.round(v*p)+'%';$(f).style.width=(v*p)+'%'});
+  fadeUp($('end3'),t,4.9,.7);
+ }
+}
+// static render: show final state
+if(!navigator.webdriver){setT(2,99);setT(3,99)}
+</script>
+</body></html>
